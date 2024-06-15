@@ -1,13 +1,13 @@
 # TODO
 ### Home:
-- footer
+- text got lost somehow
 - make image appear underneath the text on smaller displays
 
 ### Projects:
 - have projects and stuff
 
 ### Etc:
-1. make code that automatically loads in things like footers and navigation bars
+1. make flashbang mode switch back to dark, as it is the intended viewing experience
 0. make effects take in extra parameters in the class for different settings
 0. add simple game (pong or smth)
 
