@@ -47,6 +47,7 @@ function effect_radialgradient(elmt) {
     for (let i = 0; i < 0xFF; i++) {
         setTimeout(() => {
             elmt.style.background = `radial-gradient(rgb(${i}, 0, ${i}), #000000)`;
+            elmt.style.backgroundAttachment = "fixed"; //prevent the background from scrolling
         }, (speed / 0xFF) * i);
     }
 }
