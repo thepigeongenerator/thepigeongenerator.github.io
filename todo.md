@@ -1,10 +1,6 @@
 # TODO
-### Home:
-- make image fly in when it is visible
-
 ### Etc:
 1. make effects take in extra parameters in the class for different settings
-0. ~~add simple game (pong or smth)~~
 
 ## REQUIREMENS
 - ### documentation:
