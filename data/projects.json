@@ -18,6 +18,15 @@
         }
     },
     {
+        "image": "images/projects/baba_is_you_clone.png",
+        "title": "Baba is You clone",
+        "body": "School project where I recreated a crappy version of Baba is You using Unity and C#",
+        "link":{
+            "text": "More Info",
+            "href": "https://github.com/thepigeongenerator/baba_is_you_clone"
+        }
+    },
+    {
         "image": "images/projects/pathfinding_test.png",
         "title": "Pathfinding Test",
         "body": "A console application where I implemented and used the A* algorithm for pathfinding.",
