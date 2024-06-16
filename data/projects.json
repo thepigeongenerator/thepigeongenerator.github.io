@@ -1,47 +1,38 @@
 [
     {
-        "image": "...",
-        "title": "Card Title",
-        "body": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "image": "images/projects/breakout_clone.png",
+        "title": "Breakout Clone",
+        "body": "A clone of the game Breakout written in C using SDL to get accustomed to both.",
         "link": {
-            "text": "Go somewhere",
-            "href": "#"
+            "text": "More Info",
+            "href": "https://github.com/thepigeongenerator/breakout_clone"
         }
     },
     {
-        "image": "...",
-        "title": "Card Title",
-        "body": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "image": "images/projects/space_shooter.png",
+        "title": "Space Shooter",
+        "body": "My second attempt at making a spaceshooter utilising MonoGame and C#.",
         "link": {
-            "text": "Go somewhere",
-            "href": "#"
+            "text": "More Info",
+            "href": "https://github.com/thepigeongenerator/SpaceShooter2"
         }
     },
     {
-        "image": "...",
-        "title": "Card Title",
-        "body": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "image": "images/projects/pathfinding_test.png",
+        "title": "Pathfinding Test",
+        "body": "A console application where I implemented and used the A* algorithm for pathfinding.",
         "link": {
-            "text": "Go somewhere",
-            "href": "#"
+            "text": "More Info",
+            "href": "https://github.com/thepigeongenerator/J1P4_Pathfinding_Test"
         }
     },
     {
-        "image": "...",
-        "title": "Card Title",
-        "body": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "image": "images/projects/text_adventure.png",
+        "title": "Text Adventure",
+        "body": "A simple text adventure written in C#. The first \"bigger\" project I made in C#.",
         "link": {
-            "text": "Go somewhere",
-            "href": "#"
-        }
-    },
-    {
-        "image": "...",
-        "title": "Card Title",
-        "body": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        "link": {
-            "text": "Go somewhere",
-            "href": "#"
+            "text": "More Info",
+            "href": "https://github.com/thepigeongenerator/TextAdventure/"
         }
     }
 ]
