@@ -2,9 +2,6 @@
 ### Home:
 - make image fly in when it is visible
 
-### Projects:
-- make radial gradient not be buggy on smaller screens.
-
 ### Etc:
 1. make effects take in extra parameters in the class for different settings
 0. ~~add simple game (pong or smth)~~
