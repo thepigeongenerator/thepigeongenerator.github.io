@@ -19,7 +19,7 @@
     },
     {
         "image": "images/projects/baba_is_you_clone.png",
-        "title": "Baba is You clone",
+        "title": "Baba is You Clone",
         "body": "School project where I recreated a crappy version of Baba is You using Unity and C#",
         "link":{
             "text": "More Info",
@@ -29,7 +29,7 @@
     {
         "image": "images/projects/pathfinding_test.png",
         "title": "Pathfinding Test",
-        "body": "A console application where I implemented and used the A* algorithm for pathfinding.",
+        "body": "A C# console application where I implemented and used the A* algorithm for pathfinding.",
         "link": {
             "text": "More Info",
             "href": "https://github.com/thepigeongenerator/J1P4_Pathfinding_Test"
