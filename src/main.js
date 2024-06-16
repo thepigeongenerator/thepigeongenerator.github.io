@@ -5,7 +5,7 @@ function main() {
         const bodyElmt = document.getElementsByTagName("body")[0];
         bodyElmt.setAttribute("data-bs-theme", "light");
     }
-    
+
     //execute qeffects
     execute_effects();
 }
