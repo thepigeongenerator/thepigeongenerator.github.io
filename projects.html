@@ -15,7 +15,11 @@
     <script src="https://kit.fontawesome.com/c9b409a4c8.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./src/util.js" defer></script>
     <script type="text/javascript" src="./src/qeffects.js" defer></script>
+    <script type="text/javascript" src="./src/generate_html.js"></script>
     <script type="text/javascript" src="./src/main.js" defer></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+    <script type="application/json" src="./data/projects.json" id="project-data"></script>
 </head>
 
 <body data-bs-theme="dark" class="d-flex h-100 flex-column">
@@ -40,15 +44,10 @@
     </nav>
 
     <!-- projects -->
-    <div class="d-flex align-items-center justify-content-around flex-wrap">
-        <div class="card m-3" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
+    <div class="d-flex align-items-center justify-content-around flex-wrap" id="insert">
+        <script type="text/javascript">
+            generate_cards("insert", "./data/projects.json");
+        </script>
     </div>
 
     <!-- about me -->
