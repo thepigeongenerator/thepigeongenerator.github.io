@@ -1,7 +1,7 @@
 /* import various fonts */
-@import url("https://fonts.googleapis.com/css?family=Protest+Guerrilla");
+/* @import url("https://fonts.googleapis.com/css?family=Protest+Guerrilla"); */
+/* @import url("https://fonts.googleapis.com/css?family=Sixtyfour"); */
 @import url("https://fonts.googleapis.com/css?family=Protest+Strike");
-@import url("https://fonts.googleapis.com/css?family=Sixtyfour");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
 @import url(animations.css);
 
@@ -11,7 +11,7 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Protest Guerrilla";
+    font-family: "Protest Strike";
 }
 
 html {
