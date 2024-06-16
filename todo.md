@@ -1,15 +1,13 @@
 # TODO
 ### Home:
-- text got lost somehow
-- make image appear underneath the text on smaller displays
+- make image fly in when it is visible
 
 ### Projects:
-- have projects and stuff
+- make radial gradient not be buggy on smaller screens.
 
 ### Etc:
-1. make flashbang mode switch back to dark, as it is the intended viewing experience
-0. make effects take in extra parameters in the class for different settings
-0. add simple game (pong or smth)
+1. make effects take in extra parameters in the class for different settings
+0. ~~add simple game (pong or smth)~~
 
 ## REQUIREMENS
 - ### documentation:
@@ -19,7 +17,7 @@
 - ### technical:
     - [X] bootrap
     - [X] javascript
-    - [ ] responsive
+    - [X] responsive
     - [X] lightweight (loads quick)
     - [X] hosting
 
