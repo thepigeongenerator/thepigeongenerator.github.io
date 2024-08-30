@@ -2,7 +2,7 @@
     {
         "image": "images/projects/breakout_clone.png",
         "title": "Breakout Clone",
-        "body": "A clone of the game Breakout written in C using SDL to get accustomed to both.",
+        "body": "I recreated breakout in C utilising SDL, in order to get accustomed to both.",
         "link": {
             "text": "More Info",
             "href": "https://github.com/thepigeongenerator/breakout_clone"
@@ -11,7 +11,7 @@
     {
         "image": "images/projects/space_shooter.png",
         "title": "Space Shooter",
-        "body": "My second attempt at making a spaceshooter utilising MonoGame and C#.",
+        "body": "My second attempt at making a space shooter utilising MonoGame and C#.",
         "link": {
             "text": "More Info",
             "href": "https://github.com/thepigeongenerator/SpaceShooter2"
@@ -20,7 +20,7 @@
     {
         "image": "images/projects/baba_is_you_clone.png",
         "title": "Baba is You Clone",
-        "body": "School project where I recreated a crappy version of Baba is You using Unity and C#",
+        "body": "A project where I made a bare-bones Baba is You clone using Unity and C#.",
         "link":{
             "text": "More Info",
             "href": "https://github.com/thepigeongenerator/baba_is_you_clone"
@@ -29,7 +29,7 @@
     {
         "image": "images/projects/pathfinding_test.png",
         "title": "Pathfinding Test",
-        "body": "A C# console application where I implemented and used the A* algorithm for pathfinding.",
+        "body": "A C# console application to get known with the A* pathfinding algorithm.",
         "link": {
             "text": "More Info",
             "href": "https://github.com/thepigeongenerator/J1P4_Pathfinding_Test"
