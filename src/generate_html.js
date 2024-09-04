@@ -29,7 +29,7 @@ function generate_cards(id, json_path) {
 
                 const links = [];
                 for (let j = 0; j < card_data[i].links.length; j++) {
-                    const link = create_element_with_classes("a", ["btn", "btn-primary", "m-1"]);
+                    const link = create_element_with_classes("a", ["btn", "btn-sm", "btn-outline-primary", "m-1"]);
                     link.innerText = card_data[i].links[j].text;
                     link.href = card_data[i].links[j].href;
                     links.push(link); // add to the end of the array

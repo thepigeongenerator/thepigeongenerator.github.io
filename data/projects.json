@@ -5,11 +5,11 @@
         "body": "I recreated breakout in C utilising SDL, in order to get accustomed to both.",
         "links": [
             {
-                "text": "View Source",
+                "text": "source",
                 "href": "https://github.com/thepigeongenerator/breakout_clone"
             },
             {
-                "text": "Play on Itch.io",
+                "text": "itch.io",
                 "href": "https://thepigeongenerator.itch.io/breakout-clone"
             }
         ]
@@ -20,7 +20,7 @@
         "body": "My second attempt at making a space shooter utilising MonoGame and C#.",
         "links": [
             {
-                "text": "View Source",
+                "text": "source",
                 "href": "https://github.com/thepigeongenerator/SpaceShooter2"
             }
         ]
@@ -31,7 +31,7 @@
         "body": "A project where I made a bare-bones Baba is You clone using Unity and C#.",
         "links": [
             {
-                "text": "View Source",
+                "text": "source",
                 "href": "https://github.com/thepigeongenerator/baba_is_you_clone"
             }
         ]
@@ -42,7 +42,7 @@
         "body": "A C# console application to get known with the A* pathfinding algorithm.",
         "links": [
             {
-                "text": "View Source",
+                "text": "source",
                 "href": "https://github.com/thepigeongenerator/J1P4_Pathfinding_Test"
             }
         ]
@@ -53,7 +53,7 @@
         "body": "A simple text adventure written in C#. The first \"bigger\" project I made in C#.",
         "links": [
             {
-                "text": "View Source",
+                "text": "source",
                 "href": "https://github.com/thepigeongenerator/TextAdventure/"
             }
         ]
