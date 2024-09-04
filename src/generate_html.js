@@ -27,14 +27,12 @@ function generate_cards(id, json_path) {
                 const card_text = create_element_with_classes("p", ["card-text"]);
                 card_text.innerText = card_data[i].body;
 
-                const sourcelink = create_element_with_classes("a", ["btn", "btn-primary"]);
-                sourcelink.innerText = card_data[i].sourcelink.text;
-                sourcelink.href = card_data[i].sourcelink.href;
-
-                if (card_data[i].itchlink != null) {
-                    const itchlink = create_element_with_classes("a", ["btn", "btn-primary"]);
-                    itchlink.innerText = card_data[i].itchlink.text;
-                    itchlink.href = card_data[i].itchlink.href;
+                const links = [];
+                for (let j = 0; j < card_data[i].links.length; j++) {
+                    const link = create_element_with_classes("a", ["btn", "btn-primary", "m-1"]);
+                    link.innerText = card_data[i].links[j].text;
+                    link.href = card_data[i].links[j].href;
+                    links.push(link); // add to the end of the array
                 }
 
                 //append the elements
@@ -43,10 +41,9 @@ function generate_cards(id, json_path) {
                 card.appendChild(card_body);
                 card_body.appendChild(card_title);
                 card_body.appendChild(card_text);
-                card_body.appendChild(sourcelink);
 
-                if (itchlink != null)
-                    card_body.appendChild(itchlink);
+                for (let j = 0; j < links.length; j++)
+                    card_body.appendChild(links[j]);
             }
         });
 }
