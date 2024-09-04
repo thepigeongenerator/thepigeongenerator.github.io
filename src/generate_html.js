@@ -27,9 +27,15 @@ function generate_cards(id, json_path) {
                 const card_text = create_element_with_classes("p", ["card-text"]);
                 card_text.innerText = card_data[i].body;
 
-                const link = create_element_with_classes("a", ["btn", "btn-primary"]);
-                link.innerText = card_data[i].link.text;
-                link.href = card_data[i].link.href;
+                const sourcelink = create_element_with_classes("a", ["btn", "btn-primary"]);
+                sourcelink.innerText = card_data[i].sourcelink.text;
+                sourcelink.href = card_data[i].sourcelink.href;
+
+                if (card_data[i].itchlink != null) {
+                    const itchlink = create_element_with_classes("a", ["btn", "btn-primary"]);
+                    itchlink.innerText = card_data[i].itchlink.text;
+                    itchlink.href = card_data[i].itchlink.href;
+                }
 
                 //append the elements
                 elmt.appendChild(card);
@@ -37,7 +43,10 @@ function generate_cards(id, json_path) {
                 card.appendChild(card_body);
                 card_body.appendChild(card_title);
                 card_body.appendChild(card_text);
-                card_body.appendChild(link);
+                card_body.appendChild(sourcelink);
+
+                if (itchlink != null)
+                    card_body.appendChild(itchlink);
             }
         });
 }
