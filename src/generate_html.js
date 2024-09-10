@@ -59,14 +59,16 @@ function generate_cards(id, json_path) {
                 image.src = card_data[i].image;
                 image.alt = `${card_data[i].title} image`;
 
-                const card_body = create_element_with_classes("div", ["card-body"]);
+                const card_body = create_element_with_classes("div", ["card-body", "d-flex", "flex-column"]);
                 const card_title = create_element_with_classes("h5", ["card-title"]);
                 card_title.innerText = card_data[i].title;
 
                 const card_text = create_element_with_classes("p", ["card-text"]);
                 card_text.innerText = card_data[i].body;
 
+                const link_container = create_element_with_classes("div", ["flex-row", "mt-auto"]);
                 const links = [];
+
                 for (let j = 0; j < card_data[i].links.length; j++) {
                     const link = create_element_with_classes("a", ["btn", "btn-sm", "btn-outline-primary", "m-1"]);
                     link.innerText = card_data[i].links[j].text;
@@ -80,9 +82,10 @@ function generate_cards(id, json_path) {
                 card.appendChild(card_body);
                 card_body.appendChild(card_title);
                 card_body.appendChild(card_text);
+                card_body.appendChild(link_container);
 
                 for (let j = 0; j < links.length; j++)
-                    card_body.appendChild(links[j]);
+                    link_container.appendChild(links[j]);
             }
         });
 }
