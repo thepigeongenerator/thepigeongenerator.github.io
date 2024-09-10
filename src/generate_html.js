@@ -33,6 +33,7 @@ function load_html() {
     }
 }
 
+// creates an element with classess
 function create_element_with_classes(element, classes) {
     const elmt = document.createElement(element);
     for (let i = 0; i < classes.length; i++) {
@@ -41,12 +42,15 @@ function create_element_with_classes(element, classes) {
     return elmt;
 }
 
+// generates cards (eg for projects)
 function generate_cards(id, json_path) {
-    fetch(json_path)
-        .then(response => response.json())
+    fetch(json_path) // get the file at the json path
+        .then(response => response.json()) // get the response in json format
         .then(card_data => {
+            // get the element with the given id
             const elmt = document.getElementById(id);
 
+            // create cards
             for (let i = 0; i < card_data.length; i++) {
                 const card = create_element_with_classes("div", ["card", "m-3"]);
                 card.style.width = "18rem";
