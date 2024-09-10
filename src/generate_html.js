@@ -29,6 +29,7 @@ function load_html() {
                 }
 
                 elmt.innerHTML += data; // write the responce in the innerHtml
+                execute_effects(elmt);
             });
     }
 }

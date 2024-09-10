@@ -6,10 +6,12 @@ function main() {
         bodyElmt.setAttribute("data-bs-theme", "light");
     }
 
-    load_html();
 
     //execute qeffects
     execute_effects();
+
+    // loads html (will call qeffects itself)
+    load_html();
 }
 
 main();

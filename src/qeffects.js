@@ -53,11 +53,13 @@ function effect_radialgradient(elmt) {
 }
 
 //finds the elements with the different class names and execute the correct effect on them
-function execute_effects() {
+function execute_effects(elmt) {
     //apply effects
     for (let effect in effects) {
         //find the elements with the current effect
-        const elements = document.getElementsByClassName("qeffect-" + effect);
+        const elements = (elmt === undefined) ?
+            document.querySelectorAll(".qeffect-" + effect) :
+            elmt.querySelectorAll(".qeffect-" + effect);
         //execute the associated effect function on these elements
         for (let i = 0; i < elements.length; i++) {
             effects[effect](elements[i]);
