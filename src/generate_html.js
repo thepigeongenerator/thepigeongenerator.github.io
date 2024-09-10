@@ -1,3 +1,38 @@
+// replace the args in data, return result
+function parse_data(data, args) {
+    for (let i = 0; i < args.length; i++) {
+        // replace the index surrounded by curly braces {0}, {1}, etc with the value in args
+        data = data.replace("{" + i + "}", args[i]);
+    }
+
+    return data;
+}
+
+// loads html from an external file
+function load_html() {
+    // get all elements with the html tag to load in
+    const elmts = document.querySelectorAll(".load-html");
+
+    // loop through the elements
+    for (let i = 0; i < elmts.length; i++) {
+        const file_path = elmts[i].dataset.filepath; // extract the file path from the dataset
+        const elmt = elmts[i];
+
+        // get the file at the file path
+        fetch(file_path).then(
+            response => response.text()) // get text
+            .then(data => {
+
+                // parse the html using the arguments if args is defined
+                if (elmt.dataset.args !== undefined) {
+                    data = parse_data(data, elmt.dataset.args.split(",")); // get the arguments seperated by ,
+                }
+
+                elmt.innerHTML += data; // write the responce in the innerHtml
+            });
+    }
+}
+
 function create_element_with_classes(element, classes) {
     const elmt = document.createElement(element);
     for (let i = 0; i < classes.length; i++) {
