@@ -4,6 +4,7 @@
 
 /* import CSS files */
 @import url(./animations/animations.css);
+@import url(./image.css);
 
 :root {
     --primary: #FF00FF;
@@ -29,11 +30,4 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Protest Strike";
 }
 
-img.icon {
-    height: 2rem;
-    width: 2rem;
-}
 
-img.sepia {
-    filter: sepia(75%);
-}
