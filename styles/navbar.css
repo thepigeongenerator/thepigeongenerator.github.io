@@ -10,10 +10,11 @@ nav {
 }
 
 nav>* {
-    padding-right: 10px;
+    margin-right: 10px;
 }
 
 nav>img.icon {
+    border: 1px solid #00000077;
     height: 2rem;
     width: 2rem;
 }
