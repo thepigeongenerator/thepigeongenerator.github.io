@@ -3,10 +3,10 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
 
 /* import CSS files */
-@import url(./body.css);
-@import url(./navbar.css);
-@import url(./footer.css);
-@import url(./image.css);
+@import url(./contents/body.css);
+@import url(./contents/navbar.css);
+@import url(./contents/footer.css);
+@import url(./contents/image.css);
 @import url(./animations/animations.css);
 
 :root {
