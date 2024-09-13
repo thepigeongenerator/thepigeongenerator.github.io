@@ -1,3 +1,13 @@
+div.img-container:has(> img) {
+    border: 1px solid var(--foreground);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
 img.sepia {
     filter: sepia(75%);
 }

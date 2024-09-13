@@ -13,6 +13,8 @@ div.footer {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+
+    box-shadow: 0 0 5px 5px #00000050;
 }
 
 div.footer>* {
