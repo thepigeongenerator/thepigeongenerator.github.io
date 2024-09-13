@@ -5,12 +5,13 @@
 /* import CSS files */
 @import url(./body.css);
 @import url(./navbar.css);
+@import url(./footer.css);
 @import url(./image.css);
 @import url(./animations/animations.css);
 
 :root {
-    --primary: #FF00FF;
-    --secondary: #00DBFF;
+    --primary: #FFCCFF;
+    --secondary: #CCDBFF;
 
     --foreground: #DEDEDE;
     --background: #252525;
