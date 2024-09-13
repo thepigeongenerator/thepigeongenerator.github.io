@@ -3,8 +3,10 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
 
 /* import CSS files */
-@import url(./animations/animations.css);
+@import url(./body.css);
+@import url(./navbar.css);
 @import url(./image.css);
+@import url(./animations/animations.css);
 
 :root {
     --primary: #FF00FF;
@@ -12,7 +14,7 @@
 
     --foreground: #DEDEDE;
     --background: #252525;
-    --background-details: #555555;
+    --background-detail: #555555;
 }
 
 
@@ -20,14 +22,3 @@
     color: var(--foreground);
     font-family: "Roboto Mono";
 }
-
-html {
-    height: 100%;
-    background-color: var(--background);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Protest Strike";
-}
-
-

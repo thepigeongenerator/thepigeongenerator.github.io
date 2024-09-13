@@ -1,8 +1,3 @@
-img.icon {
-    height: 2rem;
-    width: 2rem;
-}
-
 img.sepia {
     filter: sepia(75%);
 }
