@@ -1,0 +1,39 @@
+/* import fonts */
+@import url("https://fonts.googleapis.com/css?family=Protest+Strike");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+
+/* import CSS files */
+@import url(./animations/animations.css);
+
+:root {
+    --primary: #FF00FF;
+    --secondary: #00DBFF;
+
+    --foreground: #DEDEDE;
+    --background: #252525;
+    --background-details: #555555;
+}
+
+
+* {
+    color: var(--foreground);
+    font-family: "Roboto Mono";
+}
+
+html {
+    height: 100%;
+    background-color: var(--background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Protest Strike";
+}
+
+img.icon {
+    height: 2rem;
+    width: 2rem;
+}
+
+img.sepia {
+    filter: sepia(75%);
+}
