@@ -1,5 +1,17 @@
 div.img-container:has(> img) {
     border: 1px solid var(--foreground);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    width: fit-content;
+}
+
+@media screen and (max-width:1140px)
+{
+    div.img-container:has(> img) {
+        display: none;
+    }
 }
 
 img {
