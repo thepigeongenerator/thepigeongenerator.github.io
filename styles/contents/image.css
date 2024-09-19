@@ -4,18 +4,20 @@ div.img-container:has(> img) {
     align-items: center;
     justify-content: center;
     margin: 1rem;
-    width: fit-content;
+    max-width: fit-content;
+    max-height: 75vh;
 }
 
-@media screen and (max-width:1140px)
-{
-    div.img-container:has(> img) {
-        display: none;
-    }
+div.img-container > img {
+    max-height: inherit;
+    max-width: inherit;
+    width: auto;
+    height: auto;
 }
 
 img {
     max-width: 100%;
+    width: auto;
     height: auto;
 }
 
