@@ -53,21 +53,20 @@ function generate_cards(id, json_path) {
 
             // create cards
             for (let i = 0; i < card_data.length; i++) {
-                const card = create_element_with_classes("div", ["card", "m-3"]);
-                card.style.width = "18rem";
+                const card = create_element_with_classes("div", ["card"]);
 
-                const image = create_element_with_classes("img", ["card-img-top"]);
+                const image = create_element_with_classes("img", []);
                 image.src = card_data[i].image;
                 image.alt = `${card_data[i].title} image`;
 
-                const card_body = create_element_with_classes("div", ["card-body", "d-flex", "flex-column"]);
+                const card_body = create_element_with_classes("div", ["card-body"]);
                 const card_title = create_element_with_classes("h5", ["card-title"]);
                 card_title.innerText = card_data[i].title;
 
                 const card_text = create_element_with_classes("p", ["card-text"]);
                 card_text.innerText = card_data[i].body;
 
-                const link_container = create_element_with_classes("div", ["flex-row", "mt-auto"]);
+                const link_container = create_element_with_classes("div", ["card-links"]);
                 const links = [];
 
                 for (let j = 0; j < card_data[i].links.length; j++) {

@@ -4,6 +4,7 @@
 
 /* import CSS files */
 @import url(./contents/body.css);
+@import url(./contents/cards.css);
 @import url(./contents/navbar.css);
 @import url(./contents/footer.css);
 @import url(./contents/image.css);
