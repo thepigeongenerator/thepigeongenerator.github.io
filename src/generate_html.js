@@ -73,6 +73,8 @@ function generate_cards(id, json_path) {
                     const link = create_element_with_classes("a", ["btn", "btn-sm", "btn-outline-primary", "m-1"]);
                     link.innerText = card_data[i].links[j].text;
                     link.href = card_data[i].links[j].href;
+                    link.target="_blank"; // make the link open in a new tab
+                    link.rel = "noopener noreferrer";
                     links.push(link); // add to the end of the array
                 }
 
