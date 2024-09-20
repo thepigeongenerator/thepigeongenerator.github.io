@@ -1,11 +1,10 @@
 //global definition of all the effects
-const effects = {
-    typewriter: effect_typewriter,
-    radialgradient: effect_radialgradient
+type EffectFunction = {
+    (elmt: HTMLElement): void
 };
 
 //writes the string out, but first writes random characters.
-function effect_typewriter(elmt) {
+function effect_typewriter(elmt: HTMLElement) {
     const letterDelay = 30;
     const randomRepeatCount = 3;
     const text = elmt.innerText;
@@ -41,7 +40,7 @@ function effect_typewriter(elmt) {
 }
 
 //slowly fades in a linear gradient
-function effect_radialgradient(elmt) {
+function effect_radialgradient(elmt: HTMLElement) {
     const speed = 255 * 20;
 
     for (let i = 0; i < 0xFF; i++) {
@@ -53,16 +52,22 @@ function effect_radialgradient(elmt) {
 }
 
 //finds the elements with the different class names and execute the correct effect on them
-function execute_effects(elmt) {
+function execute_effects(elmt: Element | null) {
+    // define the effects that exist
+    const effects: { [key: string]: EffectFunction } = {
+        typewriter: effect_typewriter,
+        radialgradient: effect_radialgradient
+    };
+
     //apply effects
     for (let effect in effects) {
         //find the elements with the current effect
-        const elements = (elmt === undefined) ?
+        const elements = (elmt === null) ?
             document.querySelectorAll(".qeffect-" + effect) :
             elmt.querySelectorAll(".qeffect-" + effect);
         //execute the associated effect function on these elements
         for (let i = 0; i < elements.length; i++) {
-            effects[effect](elements[i]);
+            effects[effect](elements[i] as HTMLElement);
         }
     }
 }

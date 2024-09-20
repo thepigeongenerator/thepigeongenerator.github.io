@@ -12,11 +12,7 @@
 
     <!-- javascript -->
     <script src="https://kit.fontawesome.com/c9b409a4c8.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./src/util.js"></script>
-    <script type="text/javascript" src="./src/qeffects.js"></script>
-    <script type="text/javascript" src="./src/generate_html.js"></script>
-
-    <script type="text/javascript" src="./src/main.js" defer></script>
+    <script type="text/javascript" src="./js/script.js" defer></script>
 </head>
 
 <body class="qeffect-radialgradient">
@@ -24,11 +20,7 @@
     <div class="load-html" data-filepath="./data/html/navbar.html" data-args='flicker-on-load-3,,qeffect-typewriter flicker-on-load-2 active,aria-current="page"'></div>
 
     <!-- projects -->
-    <div class="container-wrap" id="insert">
-        <script type="text/javascript">
-            generate_cards("insert", "./data/projects.json");
-        </script>
-    </div>
+    <div class="container-wrap generate-cards" data-filepath="./data/projects.json"></div>
 
     <!-- footer -->
     <div class="footer load-html" data-filepath="./data/html/footer.html"></div>
