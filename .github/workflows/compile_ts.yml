@@ -12,6 +12,8 @@ jobs:
             - name: checkout repository
               uses: actions/checkout@v2
 
+            - run: echo '!js' >> .gitignore
+
             - name: init nodejs
               uses: actions/setup-node@v3
             - name: init packages
@@ -24,3 +26,4 @@ jobs:
               uses: peaceiris/actions-gh-pages@v3
               with:
                 github_token: ${{ secrets.GITHUB_TOKEN }}
+                publish_dir: "."
