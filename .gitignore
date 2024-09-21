@@ -1,0 +1,25 @@
+.vscode/
+node_modules/
+js/
+# .website_ignore:
+#############################################
+# this is automatically added to .gitignore #
+#############################################
+# additional definitions to ignore when on the website branch
+
+# remove the js/ exclusion from .gitignore
+!js/
+
+# exclude folders
+src/
+
+# exclude files
+#   node
+tsconfig.json
+package.json
+package-lock.json
+
+#   other
+.website_ignore
+todo.md
+README.md

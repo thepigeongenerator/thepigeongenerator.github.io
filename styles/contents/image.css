@@ -1,0 +1,27 @@
+div.img-container:has(> img) {
+    border: 1px solid var(--foreground);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    max-width: fit-content;
+    max-height: 75vh;
+}
+
+div.img-container > img {
+    max-height: inherit;
+    max-width: inherit;
+    width: auto;
+    height: auto;
+}
+
+img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+
+img.sepia {
+    filter: sepia(75%);
+}
