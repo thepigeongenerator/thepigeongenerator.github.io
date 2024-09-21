@@ -1,4 +1,4 @@
-# website_ignore:
+# .website_ignore:
 #############################################
 # this is automatically added to .gitignore #
 #############################################
@@ -17,6 +17,6 @@ package.json
 package-lock.json
 
 #   other
-website_ignore
+.website_ignore
 todo.md
 README.md
