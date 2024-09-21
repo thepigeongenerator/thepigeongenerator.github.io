@@ -8,7 +8,7 @@ div.img-container:has(> img) {
     max-height: 75vh;
 }
 
-div.img-container > img {
+div.img-container>img {
     max-height: inherit;
     max-width: inherit;
     width: auto;
