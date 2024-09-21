@@ -11,7 +11,8 @@
 @import url(./contents/links.css);
 @import url(./contents/navbar.css);
 @import url(./contents/titles.css);
-@import url(./animations/animations.css);
+@import url(./animations/flicker-on-load.css);
+@import url(./animations/floatin.css);
 
 :root {
     --primary: #FFCCFF;
