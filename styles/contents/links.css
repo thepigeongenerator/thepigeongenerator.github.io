@@ -10,3 +10,20 @@ a:hover, a:hover>* {
 a:active, a:active>* {
     color: var(--foreground);
 }
+
+a.button {
+    padding: 0.25rem;
+    margin: 0.25rem;
+
+    border: 1px solid var(--primary);
+    border-radius: 0.25rem;
+}
+
+a.button:hover {
+    border-color: var(--secondary);
+}
+
+a.button:active {
+    border-color: var(--foreground);
+    background-color: #FFFFFF20;
+}
