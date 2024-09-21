@@ -1,0 +1,22 @@
+div.container-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+div.container {
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+
+@media screen and (max-width:1140px) {
+    div.container {
+        flex-wrap: wrap;
+    }
+}

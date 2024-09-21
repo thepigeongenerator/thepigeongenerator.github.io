@@ -5,9 +5,12 @@
 /* import CSS files */
 @import url(./contents/body.css);
 @import url(./contents/cards.css);
-@import url(./contents/navbar.css);
+@import url(./contents/containers.css);
 @import url(./contents/footer.css);
 @import url(./contents/image.css);
+@import url(./contents/links.css);
+@import url(./contents/navbar.css);
+@import url(./contents/titles.css);
 @import url(./animations/animations.css);
 
 :root {
