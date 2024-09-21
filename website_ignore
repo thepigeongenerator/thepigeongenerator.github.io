@@ -9,6 +9,7 @@
 
 # exclude folders
 src/
+.vscode/
 
 # exclude files
 #   node
