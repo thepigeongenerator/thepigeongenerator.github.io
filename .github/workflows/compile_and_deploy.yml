@@ -1,29 +1,29 @@
-name: compile typescript to javascript
+name: compile and deploy to gh-pages branch
 
 on:
     push:
         branches: main
 
 jobs:
-    comiple-and-deploy:
+    compile-and-deploy:
         runs-on: ubuntu-latest
 
         steps:
             - name: checkout repository
               uses: actions/checkout@v2
 
-            - name: init nodejs
+            - name: initialize nodejs
               uses: actions/setup-node@v3
-            - name: init packages
+            - name: init npm packages
               run: npm install
 
-            - name: compile
+            - name: compile typescript to javascript using tsc
               run: npx tsc
 
-            - name: set website gitignore
+            - name: add website gitignore
               run: cat website_ignore >> .gitignore
 
-            - name: deploy
+            - name: deploy to gh-pages branch
               uses: peaceiris/actions-gh-pages@v3
               with:
                 github_token: ${{ secrets.GITHUB_TOKEN }}
