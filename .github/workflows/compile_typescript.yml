@@ -15,10 +15,13 @@ jobs:
             - name: init nodejs
               uses: actions/setup-node@v3
             - name: init packages
-              run: "npm install"
+              run: npm install
 
             - name: compile
               run: npx tsc
+
+            - name: set website gitignore
+              run: cat website_ignore >> .gitignore
 
             - name: deploy
               uses: peaceiris/actions-gh-pages@v3

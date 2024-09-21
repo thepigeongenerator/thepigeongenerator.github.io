@@ -1,0 +1,11 @@
+# website_ignore:
+#############################################
+# this is automatically added to .gitignore #
+#############################################
+# additional definitions to ignore when on the website branch
+!js/
+src/
+tsconfig.json
+package.json
+package-lock.json
+website_ignore
