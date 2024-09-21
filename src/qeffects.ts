@@ -1,4 +1,3 @@
-//global definition of all the effects
 type EffectFunction = {
     (elmt: HTMLElement): void
 };
@@ -41,14 +40,28 @@ function effect_typewriter(elmt: HTMLElement) {
 
 //slowly fades in a linear gradient
 function effect_radialgradient(elmt: HTMLElement) {
-    const speed = 255 * 20;
+    //const speed = 255 * 20;
+    // get dataset arguments
+    const foreground = Colour.fromCSS(elmt.dataset.foreground ?? "#00000000");
+    const background = Colour.fromCSS(elmt.dataset.background ?? "#00000000");
+    const speed = elmt.dataset.speed !== undefined ? parseInt(elmt.dataset.speed) : 1;
+    let currForeground = background;
 
-    for (let i = 0; i < 0xFF; i++) {
-        setTimeout(() => {
-            elmt.style.background = `radial-gradient(rgb(${i}, 0, ${i}), #000000)`;
-            elmt.style.backgroundAttachment = "fixed"; //prevent the background from scrolling
-        }, (speed / 0xFF) * i);
+    elmt.style.backgroundAttachment = "fixed"; //prevent the background from scrolling
+    const lerp_colours = () => {
+        const set_style = () => elmt.style.background = `radial-gradient(${currForeground.toString()}, ${background.toString()})`;
+
+        set_style();
+        currForeground = Colour.lerp(currForeground, foreground, 0.01);
+
+        if (foreground.packedvalue !== background.packedvalue)
+            setTimeout(lerp_colours, speed);
+        else
+            set_style();
     }
+
+    //start the loop
+    lerp_colours();
 }
 
 //finds the elements with the different class names and execute the correct effect on them
