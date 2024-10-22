@@ -1,5 +1,20 @@
 [
     {
+        "image": "images/projects/microgame.png",
+        "title": "Towaria",
+        "body": "A school project where we worked on mobile development, using Unity and C#",
+        "links": [
+            {
+                "text": "read more",
+                "href": "project/towaria"
+            },
+            {
+                "href": "https://github.com/Egg321123/J2P1_microgame",
+                "text": "source"
+            }
+        ]
+    },
+    {
         "image": "images/projects/breakout_clone.png",
         "title": "Breakout Clone",
         "body": "I recreated breakout in C utilising SDL, in order to get accustomed to both.",
