@@ -2,11 +2,12 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "compile typescript to javascript",
+            "label": "build project",
             "type": "shell",
-            "command": "npx",
+            "command": "npm",
             "args": [
-                "tsc"
+                "run",
+                "debug"
             ],
         },
         {
@@ -15,6 +16,7 @@
             "command": "npx",
             "args": [
                 "http-server",
+                "out/",
                 "-p",
                 "8080"
             ],
@@ -40,7 +42,7 @@
                 }
             },
             "dependsOn": [
-                "compile typescript to javascript"
+                "build project"
             ]
         }
     ]

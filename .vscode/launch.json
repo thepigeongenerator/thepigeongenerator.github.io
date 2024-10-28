@@ -20,7 +20,7 @@
             "reAttach": true,
             "name": "Start HTTP Server",
             "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}",
+            "webRoot": "${workspaceFolder}/out",
             "preLaunchTask": "start http server"
         },
     ]

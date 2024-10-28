@@ -17,15 +17,8 @@ jobs:
             - name: init npm packages
               run: npm install
 
-            - name: compile typescript to javascript using tsc
-              run: npx tsc
-
-            - name: insert using txtinsert
-              run: |
-                wget https://github.com/thepigeongenerator/text_inserter/releases/latest/download/txtinsert -O /tmp/txtinsert
-                chmod +x /tmp/txtinsert
-                git ls-files *.html | xargs /tmp/txtinsert
-                rm /tmp/txtinsert
+            - name: build the project
+              run: npm run build
 
             - name: add website gitignore
               run: cat .website_ignore >> .gitignore
