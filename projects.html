@@ -2,29 +2,36 @@
 <html lang="en">
 
 <head>
-    $EMBED$
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quinn | Projects</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-    <!-- styles -->
-    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
-
-    <!-- javascript -->
-    <script src="https://kit.fontawesome.com/c9b409a4c8.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./js/script.js" defer></script>
+    $HEAD "Projects"$
 </head>
 
 <body class="qeffect-radialgradient" data-foreground="#FF00FFFF" data-background="var(--background)" data-speed="64">
     <!-- navigation -->
-    <div class="load-html" data-filepath="./data/html/navbar.html" data-args='flicker-on-load-3,,qeffect-typewriter flicker-on-load-2 active,aria-current="page"'></div>
+    $NAVBAR "flicker-on-load-3" "" "qeffect-typewriter flicker-on-load-2 active" "aria-current='page'"$
+
+    $CARD image title text links {
+    <div class="card">
+        <img src="$image$" alt="$image$ image">
+        <div class="card-body">
+            <h5 class="card-title">$title$</h5>
+            <p class="card-text">$text$</p>
+            <div class="card-links">$links$</div>
+        </div>
+    </div>
+    }
 
     <!-- projects -->
-    <div class="container-wrap generate-cards" data-filepath="./data/projects.json"></div>
+    <div class="container-wrap">
+        $CARD "images/projects/microgame.png" "Towaria" "A school project where we worked on mobile development, using Unity and C#" "<a class='button' target='_blank' rel='noopener noreferrer' href='https://github.com/Egg321123/J2P1_microgame'>source</a><a class='button' target='_blank' rel='noopener noreferrer' href='project/towaria'>read more</a>"$
+        $CARD "images/projects/breakout_clone.png" "Breakout Clone" "I recreated breakout in C utilising SDL, in order to get accustomed to both." "<a class='button' target='_blank' rel='noopener noreferrer' href='https://github.com/thepigeongenerator/breakout_clone'>source</a><a class='button' target='_blank' rel='noopener noreferrer' href='https://thepigeongenerator.itch.io/breakout-clone'>itch.io</a>"$
+        $CARD "images/projects/space_shooter.png" "Space Shooter" "My second attempt at making a space shooter utilising MonoGame and C#." "<a class='button' target='_blank' rel='noopener noreferrer' href='https://github.com/thepigeongenerator/SpaceShooter2'>source</a>"$
+        $CARD "images/projects/baba_is_you_clone.png" "Baba is You Clone" "A project where I made a bare-bones Baba is You clone using Unity and C#." "<a class='button' target='_blank' rel='noopener noreferrer' href='https://github.com/thepigeongenerator/baba_is_you_clone'>source</a>"$
+        $CARD "images/projects/pathfinding_test.png" "Pathfinding Test" "A C# console application to get known with the A* pathfinding algorithm." "<a class='button' target='_blank' rel='noopener noreferrer' href='https://github.com/thepigeongenerator/J1P4_Pathfinding_Test'>source</a>"$
+        $CARD "images/projects/text_adventure.png" "Text Adventure" "A simple text adventure written in C#. The first 'bigger' project I made in C#." "<a class='button' target='_blank' rel='noopener noreferrer' href='https://github.com/thepigeongenerator/TextAdventure'>source</a>"$
+    </div>
 
     <!-- footer -->
-    <div class="footer load-html" data-filepath="./data/html/footer.html"></div>
+    $FOOTER$
 </body>
 
 </html>

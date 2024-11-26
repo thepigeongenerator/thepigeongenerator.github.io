@@ -110,7 +110,6 @@
   "include": [
     "src/util.ts",
     "src/qeffects.ts",
-    "src/generate_html.ts",
     "src/main.ts"
   ]
 }
