@@ -1,8 +1,8 @@
 {
   "scripts": {
     "postinstall": "wget -O node_modules/.bin/txtinsert https://github.com/thepigeongenerator/text_inserter/releases/download/v0.1.2/txtinsert && chmod +x node_modules/.bin/txtinsert",
-    "build": "find . -iname '*.html' -exec sh -c 'git check-ignore -q {} || echo {}' \\; | xargs node_modules/.bin/txtinsert && npx tsc",
-    "debug": "mkdir out || rm -rf out/{*,.*} && find . -type f -exec sh -c 'git check-ignore -q {} || echo {}' \\; | xargs cp --parents -t ./out && find out/ -name '*.html' | xargs node_modules/.bin/txtinsert && cd out && npx tsc"
+    "build": "git ls-files *.html | xargs node_modules/.bin/txtinsert && npx tsc",
+    "debug": "[ ! -d out ] && mkdir out; rm -rf out/{*,.*}; for f in $(git ls-files --cached --others --exclude-standard); do [ -f $f ] && echo $f; done | xargs cp --parents -t ./out && find out/ -name '*.html' | xargs node_modules/.bin/txtinsert && cd out && npx tsc"
   },
   "devDependencies": {
     "typescript": "^5.6.2"
