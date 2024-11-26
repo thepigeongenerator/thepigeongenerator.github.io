@@ -40,9 +40,13 @@
                     "beginsPattern": "Starting",
                     "endsPattern": "Available on"
                 }
-            },
+            }
+        },
+        {
+            "label": "execute",
             "dependsOn": [
-                "build project"
+                "build project",
+                "start http server",
             ]
         }
     ]

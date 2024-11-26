@@ -7,7 +7,7 @@
             "name": "Start HTTP Server",
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}/out",
-            "preLaunchTask": "start http server"
+            "preLaunchTask": "execute"
         },
     ]
 }
