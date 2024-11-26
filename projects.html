@@ -4,7 +4,7 @@
 <head>
     <!-- social media embed thingies -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Portfolio Quinn" />
+<meta property="og:title" content="Portfolio Quinn | Projects" />
 <meta property="og:description" content="Quinn's portfolio website." />
 <meta property="og:url" content="https://thepigeongenerator.github.io/">
 <meta property="og:image" content="https://thepigeongenerator.github.io/images/icon.png" id="embed-image">
@@ -12,28 +12,84 @@
 <meta property="og:image:width" content="3000">
 <meta property="og:image:height" content="3000">
 <meta property="og:image:alt" content="website logo: picture of my cat">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quinn | Projects</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-    <!-- styles -->
-    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
-
-    <!-- javascript -->
-    <script src="https://kit.fontawesome.com/c9b409a4c8.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./js/script.js" defer></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quinn | Projects</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<!-- styles -->
+<link rel="stylesheet" type="text/css" href="/styles/styles.css" />
+<!-- javascript -->
+<script src="https://kit.fontawesome.com/c9b409a4c8.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/script.js" defer></script>
 </head>
 
 <body class="qeffect-radialgradient" data-foreground="#FF00FFFF" data-background="var(--background)" data-speed="64">
     <!-- navigation -->
-    <div class="load-html" data-filepath="./data/html/navbar.html" data-args='flicker-on-load-3,,qeffect-typewriter flicker-on-load-2 active,aria-current="page"'></div>
+    <nav>
+<img class="icon flicker-on-load-1" src="/images/icon.png" alt="icon" />
+<a class="flicker-on-load-3"  href="/">Home</a>
+<a class="qeffect-typewriter flicker-on-load-2 active" aria-current='page' href="/projects">Projects</a>
+</nav>
+
+    
 
     <!-- projects -->
-    <div class="container-wrap generate-cards" data-filepath="./data/projects.json"></div>
+    <div class="container-wrap">
+        <div class="card">
+<img src="images/projects/microgame.png" alt="images/projects/microgame.png image">
+<div class="card-body">
+<h5 class="card-title">Towaria</h5>
+<p class="card-text">A school project where we worked on mobile development, using Unity and C#</p>
+<div class="card-links"><a class='button' target='_blank' rel='noopener noreferrer' href='https://github.com/Egg321123/J2P1_microgame'>source</a><a class='button' target='_blank' rel='noopener noreferrer' href='project/towaria'>read more</a></div>
+</div>
+</div>
+        <div class="card">
+<img src="images/projects/breakout_clone.png" alt="images/projects/breakout_clone.png image">
+<div class="card-body">
+<h5 class="card-title">Breakout Clone</h5>
+<p class="card-text">I recreated breakout in C utilising SDL, in order to get accustomed to both.</p>
+<div class="card-links"><a class='button' target='_blank' rel='noopener noreferrer' href='https://github.com/thepigeongenerator/breakout_clone'>source</a><a class='button' target='_blank' rel='noopener noreferrer' href='https://thepigeongenerator.itch.io/breakout-clone'>itch.io</a></div>
+</div>
+</div>
+        <div class="card">
+<img src="images/projects/space_shooter.png" alt="images/projects/space_shooter.png image">
+<div class="card-body">
+<h5 class="card-title">Space Shooter</h5>
+<p class="card-text">My second attempt at making a space shooter utilising MonoGame and C#.</p>
+<div class="card-links"><a class='button' target='_blank' rel='noopener noreferrer' href='https://github.com/thepigeongenerator/SpaceShooter2'>source</a></div>
+</div>
+</div>
+        <div class="card">
+<img src="images/projects/baba_is_you_clone.png" alt="images/projects/baba_is_you_clone.png image">
+<div class="card-body">
+<h5 class="card-title">Baba is You Clone</h5>
+<p class="card-text">A project where I made a bare-bones Baba is You clone using Unity and C#.</p>
+<div class="card-links"><a class='button' target='_blank' rel='noopener noreferrer' href='https://github.com/thepigeongenerator/baba_is_you_clone'>source</a></div>
+</div>
+</div>
+        <div class="card">
+<img src="images/projects/pathfinding_test.png" alt="images/projects/pathfinding_test.png image">
+<div class="card-body">
+<h5 class="card-title">Pathfinding Test</h5>
+<p class="card-text">A C# console application to get known with the A* pathfinding algorithm.</p>
+<div class="card-links"><a class='button' target='_blank' rel='noopener noreferrer' href='https://github.com/thepigeongenerator/J1P4_Pathfinding_Test'>source</a></div>
+</div>
+</div>
+        <div class="card">
+<img src="images/projects/text_adventure.png" alt="images/projects/text_adventure.png image">
+<div class="card-body">
+<h5 class="card-title">Text Adventure</h5>
+<p class="card-text">A simple text adventure written in C#. The first 'bigger' project I made in C#.</p>
+<div class="card-links"><a class='button' target='_blank' rel='noopener noreferrer' href='https://github.com/thepigeongenerator/TextAdventure'>source</a></div>
+</div>
+</div>
+    </div>
 
     <!-- footer -->
-    <div class="footer load-html" data-filepath="./data/html/footer.html"></div>
+    <div class="footer">
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/thepigeongenerator"><i class="fa-brands fa-github-alt"></i> github</a>
+<a target="_blank" rel="noopener noreferrer" href="mailto:quinnthepigeon@gmail.com"><i class="fa-regular fa-envelope"></i> email</a>
+</div>
 </body>
 
 </html>
