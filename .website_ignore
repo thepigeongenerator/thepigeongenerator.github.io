@@ -5,10 +5,10 @@
 # additional definitions to ignore when on the website branch
 
 # remove the js/ exclusion from .gitignore
-!js/
+website/!js/
 
 # exclude folders
-src/
+website/src/
 .vscode/
 
 # exclude files
