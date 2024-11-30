@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- social media embed thingies -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Portfolio Quinn | PixelControlLayer" />
+<meta property="og:description" content="Quinn's portfolio website." />
+<meta property="og:url" content="https://thepigeongenerator.github.io/">
+<meta property="og:image" content="https://thepigeongenerator.github.io/images/icon.png" id="embed-image">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="3000">
+<meta property="og:image:height" content="3000">
+<meta property="og:image:alt" content="website logo: picture of my cat">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quinn | PixelControlLayer</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<!-- styles -->
+<link rel="stylesheet" type="text/css" href="/styles/styles.css" />
+<!-- javascript -->
+<script src="https://kit.fontawesome.com/c9b409a4c8.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/script.js" defer></script>
+</head>
+
+<body>
+    <!-- navigation -->
+    <nav>
+<img class="icon flicker-on-load-1" src="/images/icon.png" alt="icon" />
+<a class="flicker-on-load-3"  href="/">Home</a>
+<a class="flicker-on-load-3"  href="/projects">Projects</a>
+</nav>
+
+    <!-- contents -->
+    <div class="container">
+        <div>
+            <h1 class="flicker-on-load-2">PixelControlLayer</h1>
+            20 June, 2024
+            <hr />
+            <div>
+                <h3>Introduction</h2>
+                    <p>A library to allow for setting individual pixels in a MonoGame project. Is easily extendable with your own functions for more advanced drawing.</p>
+                    <p>What lead me to create this library was because I was frustrated that when working with MonoGame there was no straightforward method of drawing individual pixels or shapes.
+                        This is particularly useful when debugging, for drawing colliders, for example</p>
+            </div>
+            <div>
+                <h3>How the library works</h3>
+                <p>The library functions by utilising an internal colour buffer in the pixel control layer. It is designed to be extendable so you can modify this buffer in any way you see fit.
+                    Some default drawers are for drawing a single point using x/y coordinates, a line, a square and a circle.</p>
+                <p>This extendability is done through C# extensions. The way I've designed it is so someone using the library has the same level of control as the drawers that are included in the library.</p>
+                <p>The reason why I decided to do it this way, is because I strive to make my code flexible when it needs to be. Additionally, I was aware that my implementation of these drawers aren't particularly made with performance in mind.
+                    The entire library isn't the best performance-wise. As drawing a lot of pixels if you have a high-resolution can be taxing. But this is fine considering it was only meant to be a debug utility.
+                </p>
+                <p>Though, I am planning to take a look at my implementation at some point and see how I can increase the performance. Especially since I have recently learned more about maths in this area due to another project.
+                </p>
+            </div>
+            <div>
+                <h3>Challenges faced</h3>
+                <p>The main struggle behind this was figuring out the maths behind the default extensions for drawing the basic shapes. Hence my belief that there is still improving to do on this front.</p>
+            </div>
+            <div>
+                <h3>Utilised tools</h3>
+                <ul>
+                    <li>C#</li>
+                </ul>
+            </div>
+            <div style="padding-bottom: 3rem;">
+                <h3>Play the game</h3>
+                <p>The library is available on NuGet, you can view documentation and instructions here: <a target="_blank" rel="noopener noreferrer" href="https://github.com/thepigeongenerator/BinarySerializer/pkgs/nuget/ThePigeonGenerator.MonoGame.Render">[PixelControlLayer package]</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/thepigeongenerator"><i class="fa-brands fa-github-alt"></i> github</a>
+<a target="_blank" rel="noopener noreferrer" href="mailto:quinnthepigeon@gmail.com"><i class="fa-regular fa-envelope"></i> email</a>
+</div>
+</body>
+
+
+</html>
