@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    $HEAD "BinarySerializer"$
+</head>
+
+<body>
+    <!-- navigation -->
+    $NAVBAR "flicker-on-load-3" "" "flicker-on-load-3" ""$
+
+    <!-- contents -->
+    <div class="container">
+        <div>
+            <h1 class="flicker-on-load-2">Binary Serializer</h1>
+            30 November, 2024
+            <hr />
+            <div>
+                <h3>Introduction</h2>
+                    <p>This is a project of mine where I created a binary serializer in C#.</p>
+                    <p>What lead me to make this library was that whilst I was working on another project, I wanted to store an integer's actual bytes, not the digits as characters, as you would do with JSON or just plaintext.
+                        I quickly found the endpoints I needed to target. And utilising my knowledge about how low-level systems are structured I was able to create something which works quite well.</p>
+            </div>
+            <div>
+                <h3>How the library works</h3>
+                <h4>Serialization</h4>
+                <p>We start out with the type we want to serialize for, a pointer to the buffer in which we store this data and the size of said buffer.</p>
+                <p>First we check if the type is a primitive type (int, float, bool, etc). We convert directly onto the buffer pointer if this is the case.
+                    Otherwise we check if we're an array, and run the designated logic for that, because arrays are actually reference types in C#.
+                    Last, we loop through the fields where we get the type and size of these, and call ourselves on this, increasing the buffer pointer by the size after each type serialized.
+                    (Which allows us to map to different parts of the array stored in memory, without having to copy a bunch of data. This works because arrays are just pointers to the first element.
+                    Thus changing this first element changes what part of the array we're writing to.)
+                </p>
+                <p>For arrays, we get the type that the array is made of. For each element in the array, we call the previous function, and give the starting point of the array into the pointer.</p>
+                <h4>Deserialization</h4>
+                <p>Like before, we start out with the type we want to deserialize from and a pointer to the buffer array. We don't include the size, as it's not needed.</p>
+                <p>Again, first we check for primitive types. Convert immediately if so. Otherwise check for an array which implements different logic.
+                    Then we create an instance of the specified type, utilising a parameterless constructor. And the fields will be filled using reflection.
+                    Where, again, we loop over the different fields and call ourselves with the buffer pointer updated with the correct location along the buffer.</p>
+                <p>And arrays extract their size stored in the first 4 bytes. And allocate an array of the specified type for themselves.
+                    It then proceeds to get this type's size and writes the value for each index, adding this index multiplied by the type's size plus the 4 reserved bytes to the pointer to get the starting location of each set of data.</p>
+            </div>
+            <div>
+                <h3>Challenges faced</h3>
+                <p>My main challenge has been trying to deserialize an array. Particularly when stored in a struct.
+                    As mentioned earlier, arrays are reference types, this means that we don't know for certain how much data any given array takes up, as it'll vary with it's size.
+                    My solution for this was allocating 4 extra bytes per array, to store it's size as a 32 bit integer.
+                    Strangely, it has to be signed, because in C# everything defaults to i32. Despite systems actually using u32 for memory locations. Which is also true for array index.</p>
+                <p>Some further challenges where mainly around writing the Unit tests. I have only rather recently started writing unit tests for some applications.
+                    Notably, my txtutil written in Rust uses some unit tests. It's not too challenging, but it's new to me, so I wanted to mention it.</p>
+            </div>
+            <div>
+                <h3>Utilised tools</h3>
+                <ul>
+                    <li>C#</li>
+                    <li>Reflection</li>
+                    <li>Unit Tests</li>
+                    <li>NuGet</li>
+                </ul>
+            </div>
+            <div style="padding-bottom: 3rem;">
+                <h3>Use this library</h3>
+                <p>The library is available on NuGet, you can view some documentation and instructions here: <a target="_blank" rel="noopener noreferrer" href="https://github.com/thepigeongenerator/BinarySerializer/pkgs/nuget/ThePigeonGenerator.Utils.BinarySerializer">[BinarySerializer Package]</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    $FOOTER$
+</body>
+
+
+</html>
