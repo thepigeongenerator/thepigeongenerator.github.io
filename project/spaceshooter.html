@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- social media embed thingies -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Portfolio Quinn | Space Shooter" />
+<meta property="og:description" content="Quinn's portfolio website." />
+<meta property="og:url" content="https://thepigeongenerator.github.io/">
+<meta property="og:image" content="https://thepigeongenerator.github.io/images/icon.png" id="embed-image">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="3000">
+<meta property="og:image:height" content="3000">
+<meta property="og:image:alt" content="website logo: picture of my cat">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quinn | Space Shooter</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<!-- styles -->
+<link rel="stylesheet" type="text/css" href="/styles/styles.css" />
+<!-- javascript -->
+<script src="https://kit.fontawesome.com/c9b409a4c8.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/script.js" defer></script>
+</head>
+
+<body>
+    <!-- navigation -->
+    <nav>
+<img class="icon flicker-on-load-1" src="/images/icon.png" alt="icon" />
+<a class="flicker-on-load-3"  href="/">Home</a>
+<a class="flicker-on-load-3"  href="/projects">Projects</a>
+</nav>
+
+    <!-- contents -->
+    <div class="container">
+        <div>
+            <h1 class="flicker-on-load-2">Space Shooter</h1>
+            01 December, 2024
+            <hr />
+            <div>
+                <h3>Introduction</h2>
+                    <p>In this project I created a spaceshooter utilising C# and MonoGame.</p>
+                    <p>I split the game up in two components which we shall refer to as "core" and "gameplay".
+                        The core assembly is in charge of the behind-the-scenes game logic and data which we will go more in-depth about at <a href="#indepth">What the code is doing</a>.
+                        And the gameplay assembly is in charge of the logic and data, which is the part a player would mostly interact with.
+                    </p>
+                    <p>Two libraries of mine have been used in conjunction with this project: <a href="binaryserializer.html">BinarySerializer</a> and <a href="pixelcontrollayer.html">PixelControlLayer</a>.
+                        For the case of "BinarySerializer", this project was concepted whilst developing this project. But was split into it's own module, so I could expand upon it more easily.</p>
+            </div>
+            <div class="container">
+                <div>
+                    <h3>Gameplay</h3>
+                    <p>Once you launch the game, you immediately start playing. If you lose, the game is over and therefore closed.</p>
+                    <p>An asteroid is periodically spawned at the top of the screen, and will make it's way down. Their speed, location and size is randomised.
+                        Occasionally, this asteroid will be marked as "unbreakable". These spawn directly above the player with their texture darkened a lot more than usual to communicate to the player that these cannot be destroyed.
+                    </p>
+                    <p>At the top left of the window the health is displayed, and the top right is the score and highscore. The highscore is saved when the game is exited, usually due to the player's health reaching 0.</p>
+                    <p>The game contains sound effects for when the player is damaged, the player destroys an asteroid and the game is lost.</p>
+                    <a href="https://github.com/thepigeongenerator/SpaceShooter2">[read more]</a>
+                </div>
+                <div class="img-container"><img src="https://github.com/thepigeongenerator/SpaceShooter2/blob/master/docs/showcase.gif?raw=true" alt="" /></div>
+            </div>
+            <div>
+                <h3 id="indepth">What the code is doing</h3>
+                <h4>core assembly</h4>
+                <h5>object registering</h5>
+                <p>We start at the main game class, which creates a reference to the object registry, and performs actions on the registry on the different game events. (initialize, loadcontnet, update, draw)
+                    It implements a singleton design pattern only for within this assembly, in order to allow for some logic without having to explicitally reference the class everywhere.
+                </p>
+                <p>This is mainly used in combination with the object registry, which contains a linked list of GameObjects, which will be populated by the game objects in their constructors.
+                <p>It allocates a few extra lists for the different game events, which it will add a newly created gameobject to if it implements one of the associated interfaces. (IUpdate, etc)
+                    It also contains queues for game objects scheduled for creation and deletion. Which are tasks performed regularly at the end of each update, so the collections are not modified whilst tasks are being performed on them.
+                </p>
+                <p>I am using a linked list, as it is slightly more efficient in terms of what I am trying to do.
+                    Because the operations that will be performed on the list which would impact this decision is additions and deletions. When deleting from a list, we can store an index and tell it what index to delete.
+                    All the elements after this index will have to be moved downwards. When deleting from a linked list, we need to "climb" up to the value we want to delete, and delete it instantaniously.
+                    So, the performance of deletion is equal for list and linked list. Adding an item to a list, would mean re-allocating an array twice the capacity each time it goes over the capacity. Where a linked list can do this immediately.
+                    It is a very minor and likely unnoticeable improvement in performance, but this is the type of stuff I consider when writing code.
+                </p>
+                <h5>gameobjects</h5>
+                <p>Game objects are rather simple definitions. When defining an object with certain charaketistics in the game, you will inherit from this class. Game objects will automatically flag to the registry when they've been created and deleted.
+                    The registry allows the game object to be found when a game event is performed on them, which is the case for a standard derivative of "GameObject". Which is: "TexturedGameObject"</p>
+                <p>Textured game objects implement IDraw, which defines a function for drawing in the class. It also takes some data into it's constructor. Like, what texture to use and some other things.
+                    These fields can be modified by a child class if it needs to. (which has been done to switch out the player's texture to produce a simple animation)</p>
+                <h5>polygons / collision</h5>
+                <p>Lastly, the core assembly has a system in place to allow you to check whether a point is in a circle, a line intersects with the perimiter of a circle, and whether the perimiter of a two dimensional polygon intesects with the perimiter of a circle.</p>
+                <!-- TODO: explain maths more -->
+                <h4>gameplay assembly</h4>
+                <p>This module implements a few things from the core assembly. But, all important data is stored in a record as a global state.
+                    An instance of this record is passed to each object that wishes to use it in their constructor.</p>
+            </div>
+            <div>
+                <h3>Challenges faced</h3>
+                <p>I found the collision most challenging in this project, as this was new to me. Particularly the maths. I did figure it out, and learned a lot about this type of maths and understand what is happening.</p>
+                <p>The rest is stuff I've mostly done already in some form or another in the past. So I was quite comfortable designing the whole structure behind everything.</p>
+            </div>
+            <div>
+                <h3>Utilised tools</h3>
+                <ul>
+                    <li>C#</li>
+                    <li>MonoGame</li>
+                    <li>GIMP (for textures)</li>
+                    <li>Audacity (for sound effects)</li>
+                </ul>
+            </div>
+            <div style="padding-bottom: 3rem;">
+                <h3>Use this library</h3>
+                <p>The library is available on NuGet, you can view some documentation and instructions here: <a target="_blank" rel="noopener noreferrer" href="https://github.com/thepigeongenerator/BinarySerializer/pkgs/nuget/ThePigeonGenerator.Utils.BinarySerializer">[BinarySerializer Package]</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/thepigeongenerator"><i class="fa-brands fa-github-alt"></i> github</a>
+<a target="_blank" rel="noopener noreferrer" href="mailto:quinnthepigeon@gmail.com"><i class="fa-regular fa-envelope"></i> email</a>
+</div>
+</body>
+
+
+</html>
