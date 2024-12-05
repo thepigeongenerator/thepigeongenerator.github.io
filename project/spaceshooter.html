@@ -50,44 +50,15 @@
             <div class="container">
                 <div>
                     <h3>Gameplay</h3>
-                    <p>Once you launch the game, you immediately start playing. If you lose, the game is over and therefore closed.</p>
+                    <p>Once you launch the game, you immediately start playing. If you lose, the game is over and you can restart.</p>
                     <p>An asteroid is periodically spawned at the top of the screen, and will make it's way down. Their speed, location and size is randomised.
                         Occasionally, this asteroid will be marked as "unbreakable". These spawn directly above the player with their texture darkened a lot more than usual to communicate to the player that these cannot be destroyed.
                     </p>
-                    <p>At the top left of the window the health is displayed, and the top right is the score and highscore. The highscore is saved when the game is exited, usually due to the player's health reaching 0.</p>
+                    <p>At the top left of the window the health is displayed, and the top right is the score and highscore. The highscore is saved when the game is exited.</p>
                     <p>The game contains sound effects for when the player is damaged, the player destroys an asteroid and the game is lost.</p>
                     <a href="https://github.com/thepigeongenerator/SpaceShooter2">[read more]</a>
                 </div>
                 <div class="img-container"><img src="https://github.com/thepigeongenerator/SpaceShooter2/blob/master/docs/showcase.gif?raw=true" alt="" /></div>
-            </div>
-            <div>
-                <h3 id="indepth">What the code is doing</h3>
-                <h4>core assembly</h4>
-                <h5>object registering</h5>
-                <p>We start at the main game class, which creates a reference to the object registry, and performs actions on the registry on the different game events. (initialize, loadcontnet, update, draw)
-                    It implements a singleton design pattern only for within this assembly, in order to allow for some logic without having to explicitally reference the class everywhere.
-                </p>
-                <p>This is mainly used in combination with the object registry, which contains a linked list of GameObjects, which will be populated by the game objects in their constructors.
-                <p>It allocates a few extra lists for the different game events, which it will add a newly created gameobject to if it implements one of the associated interfaces. (IUpdate, etc)
-                    It also contains queues for game objects scheduled for creation and deletion. Which are tasks performed regularly at the end of each update, so the collections are not modified whilst tasks are being performed on them.
-                </p>
-                <p>I am using a linked list, as it is slightly more efficient in terms of what I am trying to do.
-                    Because the operations that will be performed on the list which would impact this decision is additions and deletions. When deleting from a list, we can store an index and tell it what index to delete.
-                    All the elements after this index will have to be moved downwards. When deleting from a linked list, we need to "climb" up to the value we want to delete, and delete it instantaniously.
-                    So, the performance of deletion is equal for list and linked list. Adding an item to a list, would mean re-allocating an array twice the capacity each time it goes over the capacity. Where a linked list can do this immediately.
-                    It is a very minor and likely unnoticeable improvement in performance, but this is the type of stuff I consider when writing code.
-                </p>
-                <h5>gameobjects</h5>
-                <p>Game objects are rather simple definitions. When defining an object with certain charaketistics in the game, you will inherit from this class. Game objects will automatically flag to the registry when they've been created and deleted.
-                    The registry allows the game object to be found when a game event is performed on them, which is the case for a standard derivative of "GameObject". Which is: "TexturedGameObject"</p>
-                <p>Textured game objects implement IDraw, which defines a function for drawing in the class. It also takes some data into it's constructor. Like, what texture to use and some other things.
-                    These fields can be modified by a child class if it needs to. (which has been done to switch out the player's texture to produce a simple animation)</p>
-                <h5>polygons / collision</h5>
-                <p>Lastly, the core assembly has a system in place to allow you to check whether a point is in a circle, a line intersects with the perimiter of a circle, and whether the perimiter of a two dimensional polygon intesects with the perimiter of a circle.</p>
-                <!-- TODO: explain maths more -->
-                <h4>gameplay assembly</h4>
-                <p>This module implements a few things from the core assembly. But, all important data is stored in a record as a global state.
-                    An instance of this record is passed to each object that wishes to use it in their constructor.</p>
             </div>
             <div>
                 <h3>Challenges faced</h3>
