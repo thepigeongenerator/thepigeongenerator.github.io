@@ -40,10 +40,10 @@ function effect_typewriter(elmt) {
     const letterDelay = 30;
     const randomRepeatCount = 3;
     const text = elmt.innerText;
-    elmt.innerText = Array(text.length).fill('\xa0').join('');
+    elmt.innerText = Array(text.length).fill("\xa0").join("");
     const loop_characters = (i = 0) => {
         const loop_random_repeat = (j = 0) => {
-            const charCode = Math.floor(Math.random() * (0x7F - 0x21) + 0x21);
+            const charCode = Math.floor(Math.random() * (0x7f - 0x21) + 0x21);
             const char = String.fromCharCode(charCode);
             elmt.innerText = str_insert_at(elmt.innerText, i, char);
             if (j < randomRepeatCount) {
@@ -74,7 +74,7 @@ function effect_radialgradient(elmt) {
     elmt.style.backgroundPosition = "center";
     elmt.style.height = "100vh";
     const lerp_colours = () => {
-        const set_style = () => elmt.style.backgroundImage = `radial-gradient(${currForeground.toString()}, ${background.toString()})`;
+        const set_style = () => (elmt.style.backgroundImage = `radial-gradient(${currForeground.toString()}, ${background.toString()})`);
         set_style();
         currForeground = Colour.lerp(currForeground, foreground, 0.01);
         if (foreground.packedvalue !== background.packedvalue)
@@ -87,12 +87,10 @@ function effect_radialgradient(elmt) {
 function execute_effects(elmt) {
     const effects = {
         typewriter: effect_typewriter,
-        radialgradient: effect_radialgradient
+        radialgradient: effect_radialgradient,
     };
     for (let effect in effects) {
-        const elements = (elmt === null) ?
-            document.querySelectorAll(".qeffect-" + effect) :
-            elmt.querySelectorAll(".qeffect-" + effect);
+        const elements = elmt === null ? document.querySelectorAll(".qeffect-" + effect) : elmt.querySelectorAll(".qeffect-" + effect);
         for (let i = 0; i < elements.length; i++) {
             effects[effect](elements[i]);
         }
