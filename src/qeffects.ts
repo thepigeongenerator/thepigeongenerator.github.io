@@ -47,9 +47,16 @@ function effect_radialgradient(elmt: HTMLElement) {
     const speed = elmt.dataset.speed !== undefined ? parseInt(elmt.dataset.speed) : 1;
     let currForeground = background;
 
-    elmt.style.backgroundAttachment = "fixed"; //prevent the background from scrolling
+    // prevent the background image from repeating and following the viewport instead
+    elmt.style.backgroundAttachment = "fixed";
+    elmt.style.backgroundSize = "cover";
+    elmt.style.backgroundRepeat = "no-repeat";
+    elmt.style.backgroundPosition = "center";
+    elmt.style.height = "100vh";
+
+    // linearly interpolate the colours
     const lerp_colours = () => {
-        const set_style = () => elmt.style.background = `radial-gradient(${currForeground.toString()}, ${background.toString()})`;
+        const set_style = () => elmt.style.backgroundImage = `radial-gradient(${currForeground.toString()}, ${background.toString()})`;
 
         set_style();
         currForeground = Colour.lerp(currForeground, foreground, 0.01);
