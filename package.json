@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "esbuild": "^0.25.3",
+    "sass": "^1.87.0",
+    "typescript": "^5.8.3"
+  }
+}

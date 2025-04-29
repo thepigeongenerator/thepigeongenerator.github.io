@@ -1,0 +1,11 @@
+.*
+
+# unignore specific dotfiles
+!.gitignore
+!.editorconfig
+!/.github/
+
+# ignore specific files
+/out/
+/node_modules/
+/package-lock.json
