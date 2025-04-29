@@ -15,16 +15,16 @@
 @import url(./animations/floatin.css);
 
 :root {
-    --primary: #FFCCFF;
-    --secondary: #CCDBFF;
+	--primary: #FFCCFF;
+	--secondary: #CCDBFF;
 
-    --foreground: #DEDEDE;
-    --background: #252525;
-    --background-detail: #353535;
+	--foreground: #DEDEDE;
+	--background: #252525;
+	--background-detail: #353535;
 }
 
 
 * {
-    color: var(--foreground);
-    font-family: "Roboto Mono";
+	color: var(--foreground);
+	font-family: "Roboto Mono";
 }

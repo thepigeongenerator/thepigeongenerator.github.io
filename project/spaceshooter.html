@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <!-- social media embed thingies -->
+	<!-- social media embed thingies -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Portfolio Quinn | Space Shooter" />
 <meta property="og:description" content="Quinn's portfolio website." />
@@ -24,65 +24,84 @@
 </head>
 
 <body>
-    <!-- navigation -->
-    <nav>
+	<!-- navigation -->
+	<nav>
 <img class="icon flicker-on-load-1" src="/images/icon.png" alt="icon" />
 <a class="flicker-on-load-3"  href="/">Home</a>
 <a class="flicker-on-load-3"  href="/projects">Projects</a>
 </nav>
 
-    <!-- contents -->
-    <div class="container">
-        <div>
-            <h1 class="flicker-on-load-2">Space Shooter</h1>
-            01 December, 2024
-            <hr />
-            <div>
-                <h3>Introduction</h2>
-                    <p>In this project I created a spaceshooter utilising C# and MonoGame.</p>
-                    <p>I split the game up in two components which we shall refer to as "core" and "gameplay".
-                        The core assembly is in charge of the behind-the-scenes game logic and data which we will go more in-depth about at <a href="#indepth">What the code is doing</a>.
-                        And the gameplay assembly is in charge of the logic and data, which is the part a player would mostly interact with.
-                    </p>
-                    <p>Two libraries of mine have been used in conjunction with this project: <a href="binaryserializer.html">BinarySerializer</a> and <a href="pixelcontrollayer.html">PixelControlLayer</a>.
-                        For the case of "BinarySerializer", this project was concepted whilst developing this project. But was split into it's own module, so I could expand upon it more easily.</p>
-            </div>
-            <div class="container">
-                <div>
-                    <h3>Gameplay</h3>
-                    <p>Once you launch the game, you immediately start playing. If you lose, the game is over and you can restart.</p>
-                    <p>An asteroid is periodically spawned at the top of the screen, and will make it's way down. Their speed, location and size is randomised.
-                        Occasionally, this asteroid will be marked as "unbreakable". These spawn directly above the player with their texture darkened a lot more than usual to communicate to the player that these cannot be destroyed.
-                    </p>
-                    <p>At the top left of the window the health is displayed, and the top right is the score and highscore. The highscore is saved when the game is exited.</p>
-                    <p>The game contains sound effects for when the player is damaged, the player destroys an asteroid and the game is lost.</p>
-                    <a href="https://github.com/thepigeongenerator/SpaceShooter2">[read more]</a>
-                </div>
-                <div class="img-container"><img src="https://github.com/thepigeongenerator/SpaceShooter2/blob/master/docs/showcase.gif?raw=true" alt="" /></div>
-            </div>
-            <div>
-                <h3>Challenges faced</h3>
-                <p>I found the collision most challenging in this project, as this was new to me. Particularly the maths. I did figure it out, and learned a lot about this type of maths and understand what is happening.</p>
-                <p>The rest is stuff I've mostly done already in some form or another in the past. So I was quite comfortable designing the whole structure behind everything.</p>
-            </div>
-            <div>
-                <h3>Utilised tools</h3>
-                <ul>
-                    <li>C#</li>
-                    <li>MonoGame</li>
-                    <li>GIMP (for textures)</li>
-                    <li>Audacity (for sound effects)</li>
-                </ul>
-            </div>
-            <div style="padding-bottom: 3rem;">
-                <h3>Use this library</h3>
-                <p>The library is available on NuGet, you can view some documentation and instructions here: <a target="_blank" rel="noopener noreferrer" href="https://github.com/thepigeongenerator/BinarySerializer/pkgs/nuget/ThePigeonGenerator.Utils.BinarySerializer">[BinarySerializer Package]</a></p>
-            </div>
-        </div>
-    </div>
+	<!-- contents -->
+	<div class="container">
+		<div>
+			<h1 class="flicker-on-load-2">Space Shooter</h1>
+			01 December, 2024
+			<hr />
+			<div>
+				<h3>Introduction</h2>
+					<p>In this project I created a spaceshooter utilising C# and MonoGame.</p>
+					<p>I split the game up in two components which we shall refer to as "core" and "gameplay".
+						The core assembly is in charge of the behind-the-scenes game logic and data which we will go
+						more in-depth about at <a href="#indepth">What the code is doing</a>.
+						And the gameplay assembly is in charge of the logic and data, which is the part a player would
+						mostly interact with.
+					</p>
+					<p>Two libraries of mine have been used in conjunction with this project: <a
+							href="binaryserializer.html">BinarySerializer</a> and <a
+							href="pixelcontrollayer.html">PixelControlLayer</a>.
+						For the case of "BinarySerializer", this project was concepted whilst developing this project.
+						But was split into it's own module, so I could expand upon it more easily.</p>
+			</div>
+			<div class="container">
+				<div>
+					<h3>Gameplay</h3>
+					<p>Once you launch the game, you immediately start playing. If you lose, the game is over and you
+						can restart.</p>
+					<p>An asteroid is periodically spawned at the top of the screen, and will make it's way down. Their
+						speed, location and size is randomised.
+						Occasionally, this asteroid will be marked as "unbreakable". These spawn directly above the
+						player with their texture darkened a lot more than usual to communicate to the player that these
+						cannot be destroyed.
+					</p>
+					<p>At the top left of the window the health is displayed, and the top right is the score and
+						highscore. The highscore is saved when the game is exited.</p>
+					<p>The game contains sound effects for when the player is damaged, the player destroys an asteroid
+						and the game is lost.</p>
+					<a href="https://github.com/thepigeongenerator/SpaceShooter2">[read more]</a>
+				</div>
+				<div class="img-container"><img
+						src="https://github.com/thepigeongenerator/SpaceShooter2/blob/master/docs/showcase.gif?raw=true"
+						alt="" /></div>
+			</div>
+			<div>
+				<h3>Challenges faced</h3>
+				<p>I found the collision most challenging in this project, as this was new to me. Particularly the
+					maths. I did figure it out, and learned a lot about this type of maths and understand what is
+					happening.</p>
+				<p>The rest is stuff I've mostly done already in some form or another in the past. So I was quite
+					comfortable designing the whole structure behind everything.</p>
+			</div>
+			<div>
+				<h3>Utilised tools</h3>
+				<ul>
+					<li>C#</li>
+					<li>MonoGame</li>
+					<li>GIMP (for textures)</li>
+					<li>Audacity (for sound effects)</li>
+				</ul>
+			</div>
+			<div style="padding-bottom: 3rem;">
+				<h3>Use this library</h3>
+				<p>The library is available on NuGet, you can view some documentation and instructions here: <a
+						target="_blank" rel="noopener noreferrer"
+						href="https://github.com/thepigeongenerator/BinarySerializer/pkgs/nuget/ThePigeonGenerator.Utils.BinarySerializer">[BinarySerializer
+						Package]</a></p>
+			</div>
+		</div>
+	</div>
 
-    <!-- footer -->
-    <div class="footer">
+	<!-- footer -->
+	<div class="footer">
 <a target="_blank" rel="noopener noreferrer" href="https://github.com/thepigeongenerator"><i
 class="fa-brands fa-github-alt"></i> github</a>
 <a target="_blank" rel="noopener noreferrer" href="mailto:quinnthepigeon@gmail.com"><i
