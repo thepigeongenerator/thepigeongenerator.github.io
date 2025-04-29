@@ -1,29 +1,32 @@
-a, a>* {
-    text-decoration: none;
-    color: var(--primary);
+a,
+a>* {
+	text-decoration: none;
+	color: var(--primary);
 }
 
-a:hover, a:hover>* {
-    color: var(--secondary);
+a:hover,
+a:hover>* {
+	color: var(--secondary);
 }
 
-a:active, a:active>* {
-    color: var(--foreground);
+a:active,
+a:active>* {
+	color: var(--foreground);
 }
 
 a.button {
-    padding: 0.25rem;
-    margin: 0.25rem;
+	padding: 0.25rem;
+	margin: 0.25rem;
 
-    border: 1px solid var(--primary);
-    border-radius: 0.25rem;
+	border: 1px solid var(--primary);
+	border-radius: 0.25rem;
 }
 
 a.button:hover {
-    border-color: var(--secondary);
+	border-color: var(--secondary);
 }
 
 a.button:active {
-    border-color: var(--foreground);
-    background-color: #FFFFFF20;
+	border-color: var(--foreground);
+	background-color: #FFFFFF20;
 }

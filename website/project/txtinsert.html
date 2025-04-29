@@ -2,60 +2,76 @@
 <html lang="en">
 
 <head>
-    $HEAD "txtinsert"$
+	$HEAD "txtinsert"$
 </head>
 
 <body>
-    <!-- navigation -->
-    $NAVBAR "flicker-on-load-3" "" "flicker-on-load-3" ""$
+	<!-- navigation -->
+	$NAVBAR "flicker-on-load-3" "" "flicker-on-load-3" ""$
 
-    <!-- contents -->
-    <div class="container">
-        <div>
-            <h1 class="flicker-on-load-2">txtinsert</h1>
-            26 November, 2024
-            <hr />
-            <div>
-                <h3>Introduction</h2>
-                    <p>A command-line utility written in Rust, for establishing a framework to find and replace text across files.</p>
-                    <p>This utility is used on this website to help cut back on repetitive elements, like headers, navigation bars or the footer below.</p>
-                    <p>What lead me to create this tool, was working on this website. Initially I used javascript to load in these types of repetitive elements dynamically.
-                        Though, when switching to TypeScript it created a compilation step in the website deployment. So I decided to move this logic to this step as well.
-                    </p>
-                    <p>Since I was trying to learn Rust at the time, I decided this was a good project to learn it on.</p>
-            </div>
-            <div>
-                <h3>How the tool works</h3>
-                <p>First, it goes through all the inputted files, trying to match the RegEx which looks for definition matches.
-                    When matched, it uses the groups from the RegEx to extract the different components: name, parameters and the value.</p>
-                <p>It then uses this data with a second regex, which matches for specific strings which signify that something needs to be inserted here.
-                    It loops through the specified arguments and inputs them in the parameters. Which replaces text within the value which will be inserted.
-                    If either no arguments were given, or all have been inserted in the value, the value is inserted in the text.</p>
-            </div>
-            <div>
-                <h3>Challenges faced</h3>
-                <p>This was the first application I wrote in Rust, so naturally a lot of the challenges I faced were tied to that.</p>
-                <p>Things like learning about ownership and borrowing, the unique syntax and way of working. It isn't too different from what I am used to, but different enough to throw me off balance.</p>
-                <p>I am still in the process of learning, though I believe I have now exhausted this project from it's learning capabilities.</p>
-                <p>Another large challenge was figuring out how RegEx worked again, it has been a while since I used it to this extend. Though, me frequently using it due to me using Linux does help a ton.</p>
-            </div>
-            <div>
-                <h3>Utilised tools</h3>
-                <ul>
-                    <li>Rust</li>
-                    <li>Unit Tests</li>
-                    <li>ReEx</li>
-                </ul>
-            </div>
-            <div style="padding-bottom: 3rem;">
-                <h3>Use this utility</h3>
-                <p>You can install the build of this application here, though no proper documentation has been written in a README.md file at this time: <a target="_blank" rel="noopener noreferrer" href="https://github.com/thepigeongenerator/txtinsert/releases">[txtinsert releases]</a></p>
-            </div>
-        </div>
-    </div>
+	<!-- contents -->
+	<div class="container">
+		<div>
+			<h1 class="flicker-on-load-2">txtinsert</h1>
+			26 November, 2024
+			<hr />
+			<div>
+				<h3>Introduction</h2>
+					<p>A command-line utility written in Rust, for establishing a framework to find and replace text
+						across files.</p>
+					<p>This utility is used on this website to help cut back on repetitive elements, like headers,
+						navigation bars or the footer below.</p>
+					<p>What lead me to create this tool, was working on this website. Initially I used javascript to
+						load in these types of repetitive elements dynamically.
+						Though, when switching to TypeScript it created a compilation step in the website deployment. So
+						I decided to move this logic to this step as well.
+					</p>
+					<p>Since I was trying to learn Rust at the time, I decided this was a good project to learn it on.
+					</p>
+			</div>
+			<div>
+				<h3>How the tool works</h3>
+				<p>First, it goes through all the inputted files, trying to match the RegEx which looks for definition
+					matches.
+					When matched, it uses the groups from the RegEx to extract the different components: name,
+					parameters and the value.</p>
+				<p>It then uses this data with a second regex, which matches for specific strings which signify that
+					something needs to be inserted here.
+					It loops through the specified arguments and inputs them in the parameters. Which replaces text
+					within the value which will be inserted.
+					If either no arguments were given, or all have been inserted in the value, the value is inserted in
+					the text.</p>
+			</div>
+			<div>
+				<h3>Challenges faced</h3>
+				<p>This was the first application I wrote in Rust, so naturally a lot of the challenges I faced were
+					tied to that.</p>
+				<p>Things like learning about ownership and borrowing, the unique syntax and way of working. It isn't
+					too different from what I am used to, but different enough to throw me off balance.</p>
+				<p>I am still in the process of learning, though I believe I have now exhausted this project from it's
+					learning capabilities.</p>
+				<p>Another large challenge was figuring out how RegEx worked again, it has been a while since I used it
+					to this extend. Though, me frequently using it due to me using Linux does help a ton.</p>
+			</div>
+			<div>
+				<h3>Utilised tools</h3>
+				<ul>
+					<li>Rust</li>
+					<li>Unit Tests</li>
+					<li>ReEx</li>
+				</ul>
+			</div>
+			<div style="padding-bottom: 3rem;">
+				<h3>Use this utility</h3>
+				<p>You can install the build of this application here, though no proper documentation has been written
+					in a README.md file at this time: <a target="_blank" rel="noopener noreferrer"
+						href="https://github.com/thepigeongenerator/txtinsert/releases">[txtinsert releases]</a></p>
+			</div>
+		</div>
+	</div>
 
-    <!-- footer -->
-    $FOOTER$
+	<!-- footer -->
+	$FOOTER$
 </body>
 
 

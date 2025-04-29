@@ -1,13 +1,14 @@
 .floatin-right {
-    object-position: 1000px 50%;
-    animation: floatin-right 1s normal 1s 1 forwards;
+	object-position: 1000px 50%;
+	animation: floatin-right 1s normal 1s 1 forwards;
 }
 
 @keyframes floatin-right {
-    0% {
-        object-position: 1000px 50%;
-    }
-    100% {
-        object-position: 0px 50%;
-    }
+	0% {
+		object-position: 1000px 50%;
+	}
+
+	100% {
+		object-position: 0px 50%;
+	}
 }
