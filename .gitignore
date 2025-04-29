@@ -1,3 +1,14 @@
-node_modules/
-js/
-out
+# ignore all dotfiles
+.*
+
+# ignore specific files
+/node_modules/
+/website/js/
+/out/
+/package-lock.json
+
+# unignore dotfiles
+!.gitignore
+!.editorconfig
+!.website_ignore
+!/.github/
